@@ -1,0 +1,58 @@
+.section {
+  display: grid;
+  gap: 18px;
+  padding: 18px 18px 16px;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(42, 52, 48, 0.06);
+}
+
+.header {
+  display: grid;
+  gap: 6px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.title {
+  margin: 0;
+  color: #2f343b;
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin: 0;
+  color: #9aa0a8;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.content {
+  display: grid;
+}
+
+.contentcompany {
+  gap: 12px;
+}
+
+.contentbusiness {
+  gap: 16px;
+}
+
+.contentMuted {
+  opacity: 0.58;
+}
+
+@media (max-width: 768px) {
+  .section {
+    gap: 14px;
+    padding: 14px 14px 12px;
+    border-radius: 14px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+}

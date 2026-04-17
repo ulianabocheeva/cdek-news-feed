@@ -1,0 +1,150 @@
+.state {
+  display: grid;
+  gap: 14px;
+  place-items: center;
+  min-height: 220px;
+  padding: 24px 16px;
+  border-radius: 14px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 96px;
+  height: 96px;
+  border-radius: 24px;
+  background: rgba(114, 194, 61, 0.08);
+  color: #63ad31;
+}
+
+.emptyIllustration {
+  width: 150px;
+  height: 150px;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255, 182, 24, 0.22), transparent 35%),
+    radial-gradient(circle at 70% 70%, rgba(114, 194, 61, 0.18), transparent 30%),
+    #f8faf6;
+}
+
+.textGroup {
+  display: grid;
+  gap: 8px;
+}
+
+.title {
+  margin: 0;
+  color: #2f343b;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.description {
+  max-width: 420px;
+  margin: 0;
+  color: #8d929a;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 10px;
+  background: #63ad31;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.skeletonList {
+  display: grid;
+  gap: 14px;
+  width: 100%;
+}
+
+.skeletonCard {
+  display: grid;
+  grid-template-columns: 138px 1fr auto;
+  gap: 14px;
+  align-items: start;
+}
+
+.skeletonCardBusiness {
+  grid-template-columns: 1fr;
+}
+
+.skeletonImage,
+.skeletonLine,
+.skeletonMeta {
+  position: relative;
+  overflow: hidden;
+  background: rgba(48, 55, 65, 0.08);
+}
+
+.skeletonImage {
+  min-height: 96px;
+  border-radius: 10px;
+}
+
+.skeletonCardBusiness .skeletonImage {
+  min-height: 180px;
+  border-radius: 12px;
+}
+
+.skeletonContent {
+  display: grid;
+  gap: 12px;
+  padding-top: 4px;
+}
+
+.skeletonLine {
+  height: 14px;
+  border-radius: 999px;
+}
+
+.skeletonLineWide {
+  width: 74%;
+}
+
+.skeletonLineNarrow {
+  width: 48%;
+}
+
+.skeletonMeta {
+  width: 92px;
+  height: 14px;
+  border-radius: 999px;
+}
+
+.skeletonImage::after,
+.skeletonLine::after,
+.skeletonMeta::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.9), transparent);
+  animation: shimmer 1.2s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@media (max-width: 640px) {
+  .skeletonCard {
+    grid-template-columns: 1fr;
+  }
+
+  .skeletonImage {
+    min-height: 180px;
+  }
+}
