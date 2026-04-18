@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/v1/:path*",
+      "destination": "http://1e14c3489fcb.vps.myjino.ru:5000/api/v1/:path*"
+    },
+    {
+      "source": "/assets/:path*",
+      "destination": "http://1e14c3489fcb.vps.myjino.ru:5000/assets/:path*"
+    }
+  ]
+}

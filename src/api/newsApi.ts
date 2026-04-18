@@ -1,6 +1,6 @@
 import type { NewsResponse } from '../types/news';
 
-const DEFAULT_API_BASE_URL = '/api/v1';
+const DEFAULT_API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api/v1';
 const FALLBACK_API_BASE_URL = 'http://1e14c3489fcb.vps.myjino.ru:5000/api/v1';
 
 export interface FetchNewsParams {
@@ -32,7 +32,7 @@ export const fetchNews = async ({
 
     return (await response.json()) as NewsResponse;
   } catch (error) {
-    if (!import.meta.env.DEV) {
+    if (!import.meta.env.DEV || DEFAULT_API_BASE_URL !== '/api/v1') {
       throw error;
     }
 

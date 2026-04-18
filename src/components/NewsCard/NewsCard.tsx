@@ -37,17 +37,13 @@ const normalizeImageUrl = (value?: string) => {
     return '';
   }
 
+  if (value.startsWith('/assets/')) {
+    return value;
+  }
+
   const apiBaseUrl =
     import.meta.env.VITE_API_BASE_URL || 'http://1e14c3489fcb.vps.myjino.ru:5000/api/v1';
   const apiOrigin = apiBaseUrl.replace(/\/api\/v1\/?$/, '');
-
-  if (value.startsWith('/assets/')) {
-    if (import.meta.env.DEV) {
-      return value;
-    }
-
-    return `${apiOrigin}${value}`;
-  }
 
   if (value.startsWith('/')) {
     return `${apiOrigin}${value}`;
